@@ -102,14 +102,16 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
 
             @Override
             public boolean onDoubleTap(MotionEvent e) {
-                ApllyFilter();
+                finish();
                 return super.onDoubleTap(e);
             }
 
             @Override
             public void onLongPress(MotionEvent e) {
+                ApllyFilter();
                 super.onLongPress(e);
             }
+
 
             @Override
             public boolean onSingleTapConfirmed(MotionEvent e) {
