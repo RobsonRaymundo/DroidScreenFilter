@@ -1,5 +1,3 @@
 <resources>
-
-    <string name="app_name">DroidScreenFilter</string>
-    <string name="title_activity_main">Droid Screen Filter</string>
+    <string name="app_name">Screen Filter</string>
 </resources>
