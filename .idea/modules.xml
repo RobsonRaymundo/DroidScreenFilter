@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DroidScreenFilter.iml" filepath="$PROJECT_DIR$/DroidScreenFilter.iml" />
+      <module fileurl="file://C:\Android\DroidScreenFilter\DroidScreenFilter.iml" filepath="C:\Android\DroidScreenFilter\DroidScreenFilter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Android\DroidScreenFilter\app\app.iml" filepath="C:\Android\DroidScreenFilter\app\app.iml" />
     </modules>
   </component>
 </project>
