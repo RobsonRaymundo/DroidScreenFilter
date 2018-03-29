@@ -21,16 +21,11 @@ import android.widget.SeekBar;
 
 public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeListener {
 
-    SharedMemory shared;
-
-    SeekBar alphaSeek;
-    SeekBar redSeek;
-    SeekBar greenSeek;
-    SeekBar blueSeek;
-    RelativeLayout relLay;
+    private SharedMemory shared;
+    private SeekBar alphaSeek;
+    private RelativeLayout relLay;
     private View.OnTouchListener onTouchListener;
-
-    int alpha, red, green, blue;
+    private int alpha;
 
     public final static int REQUEST_CODE = 10101;
 
@@ -52,7 +47,7 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         shared = new SharedMemory(this);
         alphaSeek = (SeekBar) findViewById(R.id.alphaControl);
         alphaSeek.setOnSeekBarChangeListener(this);
-        alpha = shared.getAlpha();
+        alpha = Math.abs(alphaSeek.getMax() - shared.getAlpha());
         alphaSeek.setProgress(alpha);
         updateColor();
         relLay = findViewById(R.id.relLay);
@@ -68,17 +63,19 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         }
     }
 
-    @Override
+
+
+        @Override
     public void onProgressChanged(SeekBar seekBar, int progress,
                                   boolean fromUser) {
         if (seekBar == alphaSeek) {
-            alpha = seekBar.getProgress();
+            alpha =  Math.abs (seekBar.getProgress() - seekBar.getMax()) ;
         }
         updateColor();
     }
 
     private void updateColor() {
-        int color = SharedMemory.getColor(alpha, red, green, blue);
+        int color = SharedMemory.getColor(alpha, 0, 0, 0);
         ColorDrawable cd = new ColorDrawable(color);
         getWindow().setBackgroundDrawable(cd);
     }
